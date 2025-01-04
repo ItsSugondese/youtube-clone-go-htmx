@@ -1,0 +1,5 @@
+api.operation= "{{.First}} chai successfully  {{.Second}} vayeko xa"
+column.not.exist= "{{.First}} tyo {{.Second}} exists gardaina."
+column.already.exist= "{{.First}} tyo {{.Second}} paili exists garxa."
+
+

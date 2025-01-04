@@ -1,0 +1,4 @@
+api.operation= "{{.First}} has been {{.Second}} successfully."
+column.not.exist= "{{.First}} with that {{.Second}} doesn't exists."
+column.already.exist= "{{.First}} with that {{.Second}} already exists."
+
