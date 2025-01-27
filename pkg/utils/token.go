@@ -36,15 +36,15 @@ func CreateToken(ttl time.Duration, payload interface{}, privateKey string) (str
 	return token, nil
 }
 
-// ValidateToken validates the provided token using the given public key
+// ValidateToken validates the provided token using the given static key
 func ValidateToken(token string, publicKeyBase64 string) bool {
-	// Decode the base64-encoded public key
+	// Decode the base64-encoded static key
 	decodedPublicKey, err := base64.StdEncoding.DecodeString(publicKeyBase64)
 	if err != nil {
-		panic(fmt.Sprintf("could not decode public key: %v", err))
+		panic(fmt.Sprintf("could not decode static key: %v", err))
 	}
 
-	// Parse the decoded public key
+	// Parse the decoded static key
 	key, err := jwt.ParseRSAPublicKeyFromPEM(decodedPublicKey)
 	if err != nil {
 		panic(fmt.Sprintf("validate: parse key: %w", err))

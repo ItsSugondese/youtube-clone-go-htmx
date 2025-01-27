@@ -1,9 +1,9 @@
 package authentication_middleware
 
 import (
-	"youtube-clone/pkg/utils"
 	"net/http"
 	"os"
+	"youtube-clone/pkg/utils"
 
 	"github.com/gin-gonic/gin"
 )
@@ -28,7 +28,7 @@ func AuthMiddleware() gin.HandlerFunc {
 func verifyTokenService(token string) bool {
 	publicKey := os.Getenv("ACCESS_TOKEN_PUBLIC_KEY")
 	if publicKey == "" {
-		panic("public key not found in environment")
+		panic("static key not found in environment")
 	}
 
 	return utils.ValidateToken(token[7:], publicKey)
